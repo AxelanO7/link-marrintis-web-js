@@ -27,8 +27,8 @@ const item = {
 const links = [
   {
     title: "Official Website",
-    description: "Explore our full services",
-    href: "https://marrintis.studio",
+    description: "Explore our full services & interactive picker",
+    href: "https://marrintis-web.vercel.app", // Fallback to live URL or landing page
     icon: (
       <IconWrapper>
         <GlobeIcon />
@@ -36,9 +36,19 @@ const links = [
     ),
   },
   {
-    title: "Consult via WhatsApp",
-    description: "Fast response for new projects",
-    href: "https://wa.me/6281234567890",
+    title: "Book Free Consultation",
+    description: "Select a slot on our Cal.com Scheduler",
+    href: "https://marrintis-web.vercel.app/konsultasi",
+    icon: (
+      <IconWrapper>
+        <CalendarIcon />
+      </IconWrapper>
+    ),
+  },
+  {
+    title: "Chat via WhatsApp",
+    description: "Fast response for project onboarding",
+    href: "https://wa.me/628123456789",
     icon: (
       <IconWrapper>
         <MessageCircleIcon />
@@ -46,72 +56,58 @@ const links = [
     ),
   },
   {
-    title: "View Case Studies",
-    description: "See our recent work",
-    href: "https://marrintis.studio/cases",
+    title: "View Pricing Plans",
+    description: "INIT, FLOW, and SCALE packages breakdown",
+    href: "https://marrintis-web.vercel.app/pricing",
     icon: (
       <IconWrapper>
-        <BriefcaseIcon />
-      </IconWrapper>
-    ),
-  },
-  {
-    title: "Download Company Profile",
-    description: "PDF Version 2025",
-    href: "https://marrintis.studio/profile.pdf",
-    icon: (
-      <IconWrapper>
-        <DownloadIcon />
-      </IconWrapper>
-    ),
-  },
-  {
-    title: "Join Our Team",
-    description: "We are hiring",
-    href: "https://marrintis.studio/careers",
-    icon: (
-      <IconWrapper>
-        <UsersIcon />
+        <TagIcon />
       </IconWrapper>
     ),
   },
 ];
 
 const expertise = [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Figma",
-  "Branding",
-  "SEO",
-  "Motion",
+  "Next.js 15",
+  "Tailwind CSS v4",
+  "Brand Identity",
+  "Design Systems",
+  "Cal.com Integration",
+  "Vercel Setup",
+  "Zoho Mail Setup",
 ];
 
 const highlights = [
-  { title: "Fintech App", subtitle: "Product design & engineering" },
-  { title: "Coffee Brand", subtitle: "Retail experience revamp" },
+  {
+    title: "INIT Package Mockup",
+    subtitle: "Landing page + Brand Identity setup",
+  },
+  {
+    title: "FLOW Corporate Engine",
+    subtitle: "Multi-page website with dynamic CMS",
+  },
 ];
 
 export default function IndexPage() {
   return (
     <>
       <Head>
-        <title>Marrintis Studio | Attraction Link</title>
+        <title>Marrintis Studio | Linktree</title>
         <meta
           content="Strategic Branding & Digital Ecosystems. Explore Marrintis Studio's services and work."
           name="description"
         />
       </Head>
-      <main className="relative min-h-screen overflow-hidden bg-[#FAFAF9] text-slate-900 transition-colors duration-300 dark:bg-[#0F172A] dark:text-white">
-        <div className="pointer-events-none absolute inset-0 opacity-70 blur-3xl">
-          <div className="absolute inset-x-6 top-10 h-32 rounded-3xl bg-gradient-to-r from-blue-200/60 via-white/40 to-blue-100/70 dark:from-blue-500/20 dark:via-blue-400/10 dark:to-cyan-500/10" />
-          <div className="absolute bottom-0 left-12 h-56 w-56 rounded-full bg-blue-200/50 dark:bg-blue-500/20" />
-          <div className="absolute right-0 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-cyan-200/40 dark:bg-indigo-500/25" />
+      <main className="relative min-h-screen overflow-hidden bg-[#FAF8F5] text-stone-900 transition-colors duration-300 dark:bg-[#0B0F19] dark:text-[#F3F4F6]">
+        {/* Soft Background Blobs */}
+        <div className="pointer-events-none absolute inset-0 opacity-40 blur-3xl">
+          <div className="absolute inset-x-6 top-10 h-32 rounded-3xl bg-gradient-to-r from-amber-200/40 via-stone-100 to-orange-100/40 dark:from-[#243E36]/20 dark:to-orange-500/10" />
+          <div className="absolute bottom-0 left-12 h-56 w-56 rounded-full bg-orange-100/30 dark:bg-amber-500/10" />
         </div>
 
-        <div className="relative mx-auto flex min-h-screen max-w-3xl flex-col px-6 py-10">
-          <div className="mb-8 flex items-center justify-end">
-            <div className="rounded-full border border-slate-200/70 bg-white/80 p-2 shadow-lg backdrop-blur dark:border-white/10 dark:bg-white/10">
+        <div className="relative mx-auto flex min-h-screen max-w-xl flex-col px-6 py-12 justify-between">
+          <div className="mb-4 flex items-center justify-end">
+            <div className="rounded-full border border-stone-200/60 bg-white/70 p-2 shadow-sm backdrop-blur dark:border-stone-800 dark:bg-stone-900/60">
               <ThemeSwitch />
             </div>
           </div>
@@ -122,43 +118,54 @@ export default function IndexPage() {
             initial="hidden"
             variants={staggerContainer}
           >
+            {/* Header / Brand visual */}
             <motion.div
-              className="flex w-full flex-col items-center gap-5 text-center"
+              className="flex w-full flex-col items-center gap-4 text-center"
               variants={item}
             >
               <div className="relative">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400/20 via-blue-500/10 to-cyan-400/20 blur-xl" />
-                <div className="relative flex h-24 w-24 items-center justify-center rounded-full border border-slate-200/70 bg-white/90 shadow-xl ring-8 ring-white/60 backdrop-blur dark:border-white/10 dark:bg-white/10 dark:ring-white/5">
-                  <span className="text-2xl font-semibold text-slate-900 dark:text-white">
-                    MS
-                  </span>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-300/20 to-orange-400/20 blur-xl" />
+                <div className="relative flex h-20 w-20 items-center justify-center rounded-full border border-stone-200/60 bg-white shadow-md ring-8 ring-white/40 backdrop-blur dark:border-stone-800 dark:bg-stone-900/80 dark:ring-stone-950/20">
+                  {/* Visual Logo SVG (Terracotta color) */}
+                  <svg
+                    className="h-10 w-10 text-[#C05C3E]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 5a7 7 0 100 14 7 7 0 000-14z"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.8}
+                    />
+                  </svg>
                 </div>
               </div>
-              <div className="flex items-center gap-2 text-lg font-semibold text-slate-900 dark:text-white md:text-xl">
+              <div className="flex items-center gap-2 text-lg font-serif font-bold text-[#243E36] dark:text-[#FAF8F5] md:text-xl">
                 Marrintis Studio
-                <Badge>Verified</Badge>
+                <Badge>Active</Badge>
               </div>
-              <p className="max-w-2xl text-base text-slate-600 dark:text-slate-200/80">
-                Strategic Branding & Digital Ecosystems. Helping businesses
-                launch and scale.
+              <p className="max-w-md text-sm text-stone-650 dark:text-stone-300">
+                Branding strategis & transformasi digital untuk bisnis baru,
+                UMKM, dan korporat.
               </p>
-              <div className="flex items-center gap-3">
-                {/* <IconButton href="https://www.linkedin.com">
-                  {" "}
-                  <LinkedinIcon />{" "}
-                </IconButton> */}
-                <IconButton href="https://www.instagram.com/marrintistudio">
-                  {" "}
-                  <InstagramIcon />{" "}
+              <div className="flex items-center gap-3 mt-1">
+                <IconButton href="https://instagram.com/marrintistudio">
+                  <InstagramIcon />
                 </IconButton>
                 <IconButton href="mailto:hello@marrintis.studio">
-                  {" "}
-                  <MailIcon />{" "}
+                  <MailIcon />
                 </IconButton>
               </div>
             </motion.div>
 
-            <motion.div className="flex w-full flex-col gap-4" variants={item}>
+            {/* Link List */}
+            <motion.div
+              className="flex w-full flex-col gap-3.5"
+              variants={item}
+            >
               {links.map((link) => (
                 <CardLink
                   key={link.title}
@@ -170,17 +177,19 @@ export default function IndexPage() {
               ))}
             </motion.div>
 
-            {/* <motion.section className="w-full" variants={item}>
-              <SectionTitle title="Powering Your Growth With" />
-              <div className="mt-3 flex flex-wrap gap-2">
+            {/* Expertise Section */}
+            <motion.section className="w-full mt-2" variants={item}>
+              <SectionTitle title="Expertise" />
+              <div className="mt-3 flex flex-wrap gap-2 justify-center">
                 {expertise.map((skill) => (
                   <Chip key={skill}>{skill}</Chip>
                 ))}
               </div>
             </motion.section>
 
-            <motion.section className="w-full" variants={item}>
-              <SectionTitle title="Recent Highlights" />
+            {/* Highlights Section */}
+            <motion.section className="w-full mt-2" variants={item}>
+              <SectionTitle title="Offerings Highlights" />
               <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {highlights.map((highlight) => (
                   <SmallCard
@@ -190,13 +199,13 @@ export default function IndexPage() {
                   />
                 ))}
               </div>
-            </motion.section> */}
+            </motion.section>
 
             <motion.footer
-              className="pb-6 pt-4 text-center text-sm text-slate-500 dark:text-slate-300/80"
+              className="pb-6 pt-8 text-center text-xs text-stone-500 dark:text-stone-400"
               variants={item}
             >
-              © 2025 Marrintis Studio. All rights reserved.
+              © 2026 Marrintis Studio. All rights reserved.
             </motion.footer>
           </motion.section>
         </div>
@@ -224,20 +233,20 @@ function CardLink({
         color="foreground"
         href={href}
       >
-        <div className="relative overflow-hidden rounded-2xl border border-slate-200/70 bg-white/90 p-4 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-200/60 dark:border-white/10 dark:bg-white/5 dark:hover:border-blue-400/40 dark:hover:shadow-blue-500/20">
+        <div className="relative overflow-hidden rounded-2xl border border-stone-200/60 bg-white/90 p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-stone-300 hover:shadow-md dark:border-stone-850 dark:bg-stone-900/50">
           <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-blue-600 shadow-inner dark:bg-blue-500/10 dark:text-blue-200">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-stone-50 text-stone-700 shadow-inner dark:bg-stone-900/80 dark:text-stone-300 shrink-0">
               {icon}
             </div>
             <div className="flex-1 text-left">
-              <p className="text-base font-semibold text-slate-900 transition-colors duration-300 dark:text-white">
+              <p className="text-sm font-bold text-stone-800 transition-colors duration-300 group-hover:text-[#C05C3E] dark:text-[#FAF8F5] dark:group-hover:text-[#E29545]">
                 {title}
               </p>
-              <p className="text-sm text-slate-600 transition-colors duration-300 group-hover:text-slate-800 dark:text-slate-200/80 dark:group-hover:text-white">
+              <p className="text-xs text-stone-500 transition-colors duration-300 dark:text-stone-400">
                 {description}
               </p>
             </div>
-            <ArrowUpRightIcon className="h-5 w-5 text-slate-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-blue-600 dark:text-slate-300 dark:group-hover:text-blue-200" />
+            <ArrowUpRightIcon className="h-4.5 w-4.5 text-stone-400 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#C05C3E] dark:text-stone-500 dark:group-hover:text-[#E29545]" />
           </div>
         </div>
       </HeroLink>
@@ -247,17 +256,17 @@ function CardLink({
 
 function SectionTitle({ title }: { title: string }) {
   return (
-    <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-300/80">
-      <div className="h-px w-8 bg-gradient-to-r from-transparent via-blue-500/60 to-transparent" />
+    <div className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.25em] text-[#C05C3E] justify-center">
+      <div className="h-px w-6 bg-[#C05C3E]/20" />
       {title}
-      <div className="h-px w-8 bg-gradient-to-r from-transparent via-blue-500/60 to-transparent" />
+      <div className="h-px w-6 bg-[#C05C3E]/20" />
     </div>
   );
 }
 
 function Chip({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded-full border border-slate-200/80 bg-white/80 px-3 py-1 text-xs font-medium text-slate-700 shadow-sm transition-colors duration-300 dark:border-white/10 dark:bg-white/5 dark:text-slate-100">
+    <span className="rounded-full border border-stone-200/60 bg-white/80 px-3 py-1 text-[10px] font-semibold text-stone-700 shadow-sm dark:border-stone-800 dark:bg-stone-900/50 dark:text-stone-300">
       {children}
     </span>
   );
@@ -265,7 +274,7 @@ function Chip({ children }: { children: React.ReactNode }) {
 
 function Badge({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded-full bg-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700 shadow-sm ring-1 ring-blue-200/80 dark:bg-blue-500/15 dark:text-blue-100 dark:ring-blue-400/40">
+    <span className="rounded-full bg-emerald-50 px-2.5 py-0.5 text-[10px] font-bold text-emerald-700 shadow-inner ring-1 ring-emerald-600/10 dark:bg-emerald-950/20 dark:text-emerald-450 dark:ring-emerald-400/20">
       {children}
     </span>
   );
@@ -273,18 +282,12 @@ function Badge({ children }: { children: React.ReactNode }) {
 
 function SmallCard({ title, subtitle }: { title: string; subtitle: string }) {
   return (
-    <div className="group overflow-hidden rounded-2xl border border-slate-200/80 bg-white/80 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-white/10 dark:bg-white/5">
-      <div className="relative h-32 w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-200 via-blue-100 to-white opacity-80 dark:from-blue-500/30 dark:via-indigo-500/20 dark:to-slate-900" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <ArrowUpRightIcon className="h-6 w-6 text-slate-600 opacity-70 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-blue-600 dark:text-slate-100" />
-        </div>
-      </div>
-      <div className="px-4 py-3">
-        <p className="text-sm font-semibold text-slate-900 dark:text-white">
+    <div className="group overflow-hidden rounded-2xl border border-stone-200/60 bg-white/80 p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:border-stone-850 dark:bg-stone-900/50">
+      <div className="flex flex-col gap-1">
+        <p className="text-xs font-bold text-stone-800 dark:text-[#FAF8F5]">
           {title}
         </p>
-        <p className="text-xs text-slate-600 dark:text-slate-300/80">
+        <p className="text-[10px] text-stone-500 dark:text-stone-400">
           {subtitle}
         </p>
       </div>
@@ -302,7 +305,7 @@ function IconButton({
   return (
     <HeroLink
       isExternal
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200/60 bg-white/90 text-slate-700 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg dark:border-white/10 dark:bg-white/5 dark:text-white"
+      className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-200/60 bg-white/90 text-stone-700 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md dark:border-stone-800 dark:bg-stone-900/50 dark:text-stone-300"
       href={href}
     >
       {children}
@@ -311,10 +314,10 @@ function IconButton({
 }
 
 function IconWrapper({ children }: { children: React.ReactNode }) {
-  return <span className="text-blue-600 dark:text-blue-200">{children}</span>;
+  return <span className="text-[#C05C3E] dark:text-[#E29545]">{children}</span>;
 }
 
-const iconProps = "h-5 w-5 stroke-[1.8]";
+const iconProps = "h-4.5 w-4.5 stroke-[1.8]";
 
 function GlobeIcon() {
   return (
@@ -333,6 +336,23 @@ function GlobeIcon() {
   );
 }
 
+function CalendarIcon() {
+  return (
+    <svg
+      className={iconProps}
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect height="18" rx="2" ry="2" width="18" x="3" y="4" />
+      <line x1="16" x2="16" y1="2" y2="6" />
+      <line x1="8" x2="8" y1="2" y2="6" />
+      <line x1="3" x2="21" y1="10" y2="10" />
+    </svg>
+  );
+}
+
 function MessageCircleIcon() {
   return (
     <svg
@@ -346,48 +366,17 @@ function MessageCircleIcon() {
   );
 }
 
-function BriefcaseIcon() {
+function TagIcon() {
   return (
     <svg
       className={iconProps}
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <rect height="14" rx="2" ry="2" width="20" x="2" y="7" />
-      <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
-      <path d="M2 12h20" />
-    </svg>
-  );
-}
-
-function DownloadIcon() {
-  return (
-    <svg
-      className={iconProps}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path d="M12 3v12" />
-      <path d="M8 11l4 4 4-4" />
-      <path d="M4 17h16" />
-    </svg>
-  );
-}
-
-function UsersIcon() {
-  return (
-    <svg
-      className={iconProps}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <circle cx="9" cy="7" r="4" />
-      <path d="M17 11a4 4 0 100-8 4 4 0 000 8z" />
-      <path d="M3 21v-1a6 6 0 016-6h0" />
-      <path d="M15 14a6 6 0 016 6v1" />
+      <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+      <line x1="7" x2="7.01" y1="7" y2="7" />
     </svg>
   );
 }
@@ -403,21 +392,6 @@ function ArrowUpRightIcon({ className = "" }: { className?: string }) {
     >
       <path d="M7 17 17 7" />
       <path d="M7 7h10v10" />
-    </svg>
-  );
-}
-
-function LinkedinIcon() {
-  return (
-    <svg
-      className={iconProps}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path d="M16 8a6 6 0 016 6v6h-4v-6a2 2 0 00-2-2c-1.1 0-2 .9-2 2v6h-4v-9.5" />
-      <rect height="9" width="4" x="2" y="9" />
-      <circle cx="4" cy="4" r="2" />
     </svg>
   );
 }
