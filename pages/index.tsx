@@ -48,7 +48,7 @@ const links = [
   {
     title: "Chat via WhatsApp",
     description: "Fast response for project onboarding",
-    href: "https://wa.me/628123456789",
+    href: "https://wa.me/6282246034453",
     icon: (
       <IconWrapper>
         <MessageCircleIcon />
