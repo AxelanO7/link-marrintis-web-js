@@ -57,7 +57,7 @@ const links = [
   },
   {
     title: "View Pricing Plans",
-    description: "INIT, FLOW, and SCALE packages breakdown",
+    description: "INIT and SCALE packages breakdown",
     href: "https://marrintis-web.vercel.app/pricing",
     icon: (
       <IconWrapper>
@@ -79,12 +79,12 @@ const expertise = [
 
 const highlights = [
   {
-    title: "INIT Package Mockup",
+    title: "INIT Package",
     subtitle: "Landing page + Brand Identity setup",
   },
   {
-    title: "FLOW Corporate Engine",
-    subtitle: "Multi-page website with dynamic CMS",
+    title: "SCALE Package",
+    subtitle: "Custom web/app + Design System + Social Media",
   },
 ];
 
